@@ -105,8 +105,8 @@ li {
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 /*for wrapper*/
@@ -138,10 +138,9 @@ li {
 /*=================================
   main styling starts here
 =================================*/
-/* banner styling starts here */
+/*banner styling starts here*/
 .banner .wrapper {
-  min-height: 100vh;
-  padding: 100px 5%;
+  padding: 140px 5%;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   background: url(/assets/images/banner.jpg) #050608 no-repeat;
@@ -156,7 +155,7 @@ li {
 }
 
 .cat-info {
-  padding: 5px 0 20px;
+  padding: 10px 0 40px;
   margin-right: 65%;
   font-size: 24px;
 }
@@ -204,12 +203,30 @@ li {
   max-width: 400px;
   position: relative;
 }
+/*banner styling ends here*/
 
-/* banner styling ends here */
+/* most searched section styling starts here */
+.most-searched { 
+  padding: 25px 0; 
+  color: #291507;
+}
 
+.most-searched-txt { font-size: 18px; }
 
+.most-searched-flex h3 { 
+  margin-right: 62%;
+  font-size: 48px;
+}
 
+.top-breeds {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.cat-breed-item {
+  margin-right: 3%;
+  flex-basis: 22%;
+}
 
 
 
