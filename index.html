@@ -2,11 +2,12 @@
 <html lang="en"> 
 	<head>
 		<meta charset="utf-8">
-		<title>Client</title>
+		<title>Catwiki</title>
 		<meta name="description" lang="en" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css" >
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" media="screen" href="assets/css/style.css" >
   	</head>
  	<body>
@@ -28,11 +29,13 @@
 						<a href="/" title="Catwiki Logo">Catwiki</a>
 					</h2>
 					<p class="cat-info">Get to know more about your cat breed</p>
-					<div class="input-container">
-						<input type="text" name="search-breed" id="search-breed" placeholder="Enter your breed">
-						<span class="error-msg"></span>
-					</div>
-					<button type="submit" class="search-btn" id="search-btn">search</button>
+					<form method="GET" class="cat-search-form">
+						<div class="input-container">
+							<input type="text" name="search-breed" id="search-breed" placeholder="Enter your breed">
+							<span class="error-msg"></span>
+						</div>
+						<button type="submit" class="search-btn" id="search-btn">search</button>
+					</form>
 				</div>
 			</section>
 			<!--banner section end-->
