@@ -81,10 +81,7 @@ sub { bottom: -.25em; }
 .cf { *zoom: 1; }
 
 /*for all*/
-body {
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
+body { box-sizing: border-box; }
 
 a { 
   display: inline-block;
@@ -109,6 +106,7 @@ li {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*for wrapper*/
@@ -129,18 +127,85 @@ li {
 
 .header-logo a { color: #291507; }
 
-.header-logo::after { 
+.header-logo a::after { 
   content: url('/assets/images/catwikiLogo.png');
   padding-left: 8px;
+  cursor: pointer;
 }
 /*=================================
   Header styling ends here
 =================================*/  
-
 /*=================================
   main styling starts here
 =================================*/
+/* banner styling starts here */
+.banner .wrapper {
+  min-height: 100vh;
+  padding: 100px 5%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: url(/assets/images/banner.jpg) #050608 no-repeat;
+  background-position-y: 80%;
+  background-size: cover;
+  color: #FFF;
+}
 
+.banner-logo {
+  font-family: 'Mystery Quest', cursive;
+  font-size: 64px;
+}
+
+.cat-info {
+  padding: 5px 0 20px;
+  margin-right: 65%;
+  font-size: 24px;
+}
+
+.banner-logo a { color: #FFF;}
+
+#search-breed {
+  width: 100%;
+  height: 70px;
+  padding: 33px;
+  border: none;
+  border-radius: 50px;
+  color: #291507;
+  font-size: 18px;
+}
+
+#search-breed:focus { outline: none;}
+
+::placeholder {
+  padding: 0;
+  color: #291507;
+  font-size: 18px;
+}
+
+.search-btn {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 22px;
+  bottom: 22px;
+  right: 25px;
+  text-indent: -9999px;
+}
+
+.search-btn::after {
+  content: "\e8b6";
+  font-family: 'Material Icons';
+  font-size: 24px;
+  color: #000;
+  float: right;
+  text-indent: 0;
+}
+
+.cat-search-form{
+  max-width: 400px;
+  position: relative;
+}
+
+/* banner styling ends here */
 
 
 
