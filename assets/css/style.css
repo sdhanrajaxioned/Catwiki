@@ -218,10 +218,9 @@ li {
   content: '';
   width: 60px;
   margin: 10px 0;
-  border-radius: 77px;
   border-bottom: 3px solid #4D270C;
+  border-radius: 77px;
   display: block;
-
 }
 
 .most-searched .wrapper { 
@@ -234,16 +233,16 @@ li {
 
 .most-searched-flex {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
 }
 
 .most-searched-flex h3 { 
-  margin-right: 43%;
+  margin-right: 42%;
   font-size: 48px;
   line-height: 59px;
 }
 
+.read-more,
 .see-more {
   color: #29150799;
   font-size: 18px;
@@ -251,12 +250,16 @@ li {
   white-space: nowrap;
 }
 
+.see-more { margin-left: auto;}
+
+.read-more::after,
 .see-more::after {
   content: "\e941";
-  padding-left: 1%;
+  padding-left: 2%;
   vertical-align: middle;
   color: #7F736A;
   font-family: 'Material Icons';
+  font-size: 25px;
 }
 
 .top-breeds {
@@ -271,9 +274,9 @@ li {
   flex-basis: 21.4%;
 }
 
-.cat-breed-item figure:first-of-type { position: relative; }
+.yellow-background{ position: relative; }
 
-.cat-breed-item figure:first-of-type::before {
+.yellow-background::before {
   content: '';
   width: 46px;
   height: 174px;
@@ -285,15 +288,77 @@ li {
 }
 
 .cat-breed-item:nth-child(4n) { margin-right: 0; }
-.cat-breed-item figure img { 
+
+.cat-breed-image { 
   border-radius: 24px;
   position: relative;
   z-index: 1;
 }
+
 .cat-breed { 
   padding-top: 20px; 
   display: inline-block ;
 }
+/* most searched section styling ends here */
+
+/* why cats section styling starts here */
+.why-cats .wrapper {
+  padding: 91px 5% 100px;
+  display: flex;
+  justify-content: space-between;
+  color: #291507;
+}
+
+.why-cats .wrapper > * { flex: 1; }
+
+.why-cats-content {
+  margin-right: 20px;
+}
+
+.why-cats-content h3 {
+  /* margin-right: 15%; */
+  padding-top: 84px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+}
+
+.why-cats-content h3::before {
+  content: '';
+  width: 67px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #4D270C;
+  border-radius: 77px;
+  display: block;
+}
+
+.why-cats-content p {
+  padding: 40px 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.cats-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cats-gallery-item {
+  flex-basis: 48%;
+  margin: 8px 3% 0 0;
+}
+
+.cats-gallery-item:nth-child(even) { margin-right: 0;} 
+
+.gallery-image { 
+  border-radius: 24px;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+/* why cats section styling ends here */
+
 /*=================================
   main styling ends here
 =================================*/
@@ -321,7 +386,8 @@ li {
 }  
 
 @media only screen and (min-width: 768px) {
-
+.read-more:hover,
+.read-more:hover::after,
 .see-more:hover,
 .see-more:hover::after { 
   color: #291507; 
