@@ -379,10 +379,53 @@ footer .wrapper {
   font-weight: 700;
   text-decoration: underline;
 }
-
  /*=================================
   footer styling ends here
 =================================*/ 
+
+/* styling for cat_article page starts here */
+.benefits-of-cat-flex {
+  display: flex;
+  border-top-left-radius: 50px;
+  background-color: #000;
+}
+
+.benefits-of-cat-flex > * { flex: 1;}
+
+
+.sub-heading-txt {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subtxt {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.benefits-of-cat-flex .why-cats-subtxt {
+  padding: 20px;
+  color: #DEC68B;
+}
+
+.cat-benefit-item .why-cats-subtxt { padding: 10px 0; }
+
+.benefits-of-cat-content .heading-txt {
+  padding: 20px;
+  font-size: 40px;
+  color:#DEC68B;
+}
+
+.cat-benefits-list {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #DEC68B;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* styling for cat_article page starts here */
 
 /*media query starts*/
 /*media query for 1198px starts here*/
