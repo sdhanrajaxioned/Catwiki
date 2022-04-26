@@ -387,11 +387,12 @@ footer .wrapper {
 .benefits-of-cat-flex {
   display: flex;
   border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
   background-color: #000;
 }
 
 .benefits-of-cat-flex > * { flex: 1;}
-
+.benefits-of-cat-image img { border-top-right-radius: 50px;}
 
 .sub-heading-txt {
   font-size: 24px;
@@ -404,12 +405,12 @@ footer .wrapper {
   line-height: 22px;
 }
 
-.benefits-of-cat-flex .why-cats-subtxt {
+.benefits-of-cat-flex .subtxt {
   padding: 20px;
   color: #DEC68B;
 }
 
-.cat-benefit-item .why-cats-subtxt { padding: 10px 0; }
+.cat-benefit-item .subtxt { padding: 10px 0; }
 
 .benefits-of-cat-content .heading-txt {
   padding: 20px;
@@ -438,10 +439,19 @@ footer .wrapper {
 }  
 /*media query for 1024px starts here*/
 @media only screen and (max-width: 1024px) {
-.most-searched-flex .heading-txt { 
-  width: 43%; 
-  font-size: 35px;
-}
+  .most-searched-flex .heading-txt { 
+    width: 43%; 
+    font-size: 35px;
+  }
+
+  /*styling cat article page start*/
+  .benefits-of-cat-flex {
+    flex-direction: column-reverse;
+    align-items: unset;
+  }
+
+  .benefits-of-cat-image img { border-top-left-radius: 50px;}
+  /*styling cat article page ends*/
 }  
 
 /*media query for 995px starts here*/
@@ -471,7 +481,6 @@ footer .wrapper {
     font-size: 10px;
     margin-right: 76%;
   }
-
 
   .banner .wrapper {
     background-position: center; 
@@ -546,6 +555,17 @@ footer .wrapper {
     padding-top: 7px;
     font-size: 12px;
   }
+
+  /*styling cat article page starts*/
+  .benefits-of-cat-content .heading-txt {
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  .sub-heading-txt { font-size: 20px; }
+  .subtxt { font-size: 16px;  }
+  /*styling cat article page ends*/
+
 }  
 
 
