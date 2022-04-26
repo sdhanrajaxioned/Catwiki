@@ -236,11 +236,13 @@ li {
   align-items: flex-end;
 }
 
-.most-searched-flex h3 { 
-  margin-right: 42%;
+.heading-txt {
   font-size: 48px;
-  line-height: 59px;
+  font-weight: 700;
+  line-height: 58px;
 }
+
+.most-searched-flex .heading-txt { margin-right: 42%; }
 
 .read-more,
 .see-more {
@@ -311,17 +313,9 @@ li {
 
 .why-cats .wrapper > * { flex: 1; }
 
-.why-cats-content {
-  margin-right: 20px;
-}
+.why-cats-content { margin-right: 4%; }
 
-.why-cats-content h3 {
-  /* margin-right: 15%; */
-  padding-top: 84px;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 58px;
-}
+.why-cats-content .heading-txt { padding-top: 84px; }
 
 .why-cats-content h3::before {
   content: '';
@@ -345,17 +339,16 @@ li {
 }
 
 .cats-gallery-item {
-  flex-basis: 48%;
-  margin: 8px 3% 0 0;
+  flex-basis: 47.5%;
+  margin-right: 5%;
 }
 
 .cats-gallery-item:nth-child(even) { margin-right: 0;} 
 
 .gallery-image { 
+  margin-top: 28px;
   border-radius: 24px;
-  margin-top: 8px;
   vertical-align: middle;
-  width: 100%;
 }
 /* why cats section styling ends here */
 
