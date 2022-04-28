@@ -492,11 +492,18 @@ footer .wrapper {
 
 .rating-outer::before {
   content: "\f108 \f108 \f108 \f108 \f108";
+  color: #ccc;
   font-family: 'Material Icons';
   font-size: 50px;
-  color: #ccc;
-  float: right;
-  text-indent: 0;
+  font-weight: 900;
+}
+
+.rating-inner::before {
+  content: "\f108 \f108 \f108 \f108 \f108";
+  color:#544439;
+  font-family: 'Material Icons';
+  font-size: 50px;
+  font-weight: 900;
 }
 /* styling for cat_article page ends here */
 
