@@ -12,61 +12,120 @@
  	<body>
     <!--container start-->
     <div class="container">
+	    <!--header section start--> 
+		<header>
+			<div class="wrapper">
+				<h1 class="header-logo"><a href="/" title="Catwiki Logo">Catwiki</a></h1>
+			</div>
+		</header>
+		<!--header section end-->
     	<!--main section start-->
-    	<main>
-	        <!--header section start--> 
-			<header>
-				<div class="wrapper">
-					<h1 class="header-logo"><a href="/" title="Catwiki Logo">Catwiki</a></h1>
-				</div>
-			</header>
-			<!--header section end-->
-    		<!--main section start-->
-			<main>
+		<main>
+			<!--section cat breed details start-->
 			<section class="cat-breed-details">
-				<figure class="searched-cat-img">
-				</figure>
-				<div class="searched-cat-details">
-					<div class="wrapper">
+				<div class="wrapper">
+					<figure class="searched-cat-img">
+					</figure>
+					<div class="searched-cat-details">
 						<h2 class="breed-name-heading">Bengal</h2>
 						<p class="breed-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, optio.</p>
-						<h3 class="breed-description-heading">Temperament: <span class="temperament"></span></h3>
-						<h3 class="breed-description-heading">Origin: <span class="origin"></span></h3>
-						<h3 class="breed-description-heading">Life Span: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Adaptability: <span class="Adaptability"></span></h3>
-						<h3 class="breed-description-heading">Affection level: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Child Friendly: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Grooming: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Intelligence: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Health issues: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Social needs: <span class="life-span"></span></h3>
-						<h3 class="breed-description-heading">Stranger friendly: <span class="life-span"></span></h3>
+						<ul class="breed-ratings">
+							<li>
+								<h3 class="breed-description-heading">Temperament:</h3>
+								<span class="temperament"></span>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Life Span:</h3>
+								<span class="life-span"></span>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Adaptability:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Affection level:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Child Friendly:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Grooming:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Grooming:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Intelligence:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Health issues:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Social needs:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+							<li>
+								<h3 class="breed-description-heading">Stranger friendly:</h3>
+								<div class="rating-outer">
+									<div class="rating-inner"></div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</section>
+			<!--section cat breed details end-->
+			<!--section other photos start-->
 			<section class="other-photos" id="other-photos">
-				<h4 class="other-photos-heading"></h4>
-				<ul class="photos"></ul>
+				<h4 class="other-photos-heading">Other photos</h4>
+				<ul class="photos">
+					<li class="loading-item">
+						<span class="loading">Loading..</span>
+					</li>
+				</ul>
 			</section>
-			</main>
-    		<!--main section end-->
-      		<!--footer section start-->
-			<footer class="fixed-footer">    
-				<div class="wrapper">
-					<div class="logo-container">
-						<h4>
-							<a href="/" class="footer-logo">Catwiki 
-								<img src="assets/images/catwikiLogo.png" alt="Catwiki logo">
-							</a>
-						</h4>
-					</div>
-					<div class="footer-content">
-						<p class="footer-txt">&#169; created by <a href="#FIXME" class="username" title="Username">username</a> - devChallenge.io 2021</p>
-					</div>
-				</div>  
-			</footer>
-			<!--footer section end-->
-		</div>
+			<!-- section other photos end -->
+		</main>
+		<!--main section end-->
+		<!--footer section start-->
+		<footer class="fixed-footer">    
+			<div class="wrapper">
+				<div class="logo-container">
+					<h4>
+						<a href="/" class="footer-logo">Catwiki 
+							<img src="assets/images/catwikiLogo.png" alt="Catwiki logo">
+						</a>
+					</h4>
+				</div>
+				<div class="footer-content">
+					<p class="footer-txt">&#169; created by <a href="#FIXME" class="username" title="Username">username</a> - devChallenge.io 2021</p>
+				</div>
+			</div>  
+		</footer>
+		<!--footer section end-->
+	</div>
     <!--container end-->
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script src="assets/vendor/script.js"></script>
