@@ -52,8 +52,8 @@ $(document).ready(function () {
       $('.photos').html('');
       var image_data = JSON.parse(localStorage.getItem('image_response'));
       var breed_info_data = JSON.parse(localStorage.getItem('breed_details'));
-      console.log(breed_info_data)
       var cat_breed_name = breed_info_data[0]['name'];
+      var cat_breed_description = breed_info_data[0]['description'];
       var cat_temperament = breed_info_data[0]['temperament'];
       var cat_origin = breed_info_data[0]['origin'];
       var cat_life_span = breed_info_data[0]['life_span'];
@@ -66,6 +66,7 @@ $(document).ready(function () {
       var cat_social_needs = breed_info_data[0]['social_needs'];
       var cat_stranger_friendly = breed_info_data[0]['stranger_friendly'];
 
+      //storing cat ratings in an object
       var ratings = {
         adaptability: cat_adaptability,
         affection: cat_affection_level,
@@ -77,20 +78,18 @@ $(document).ready(function () {
         stranger_friendly: cat_stranger_friendly
       }
 
-      setRatings(ratings);
-
       $('.breed-name-heading').html(cat_breed_name);
+      $('.breed-description').html(cat_breed_description);
       $('.temperament').html(cat_temperament);
-      $.each(image_data, function (index, value) { 
-        var li = document.createElement('li');
-        list_items.push(li);
-        li.classList.add('other-photo-item');
-        $(li).html(`<img src=${value.url}>`);
-        $('.photos').append(li);
-      });
+      $('.origin').html(cat_origin);
+      $('.life-span').html(cat_life_span);
+
+      setRatings(ratings);
+      displayOtherPhotos(image_data);
     }
   }
 
+  // sets cat rating according to JSON response value
   function setRatings(ratings) {
     var ratingsTotal = 5;
     for (var rating in ratings) {
@@ -100,6 +99,17 @@ $(document).ready(function () {
       var rating_percentage_rounded = `${Math.round(rating_percentage / 10) * 10}%`
       $(`.${rating} .rating-inner`).css('width', rating_percentage_rounded);
     }
+  }
+
+  //displays other photos of the breed
+  function displayOtherPhotos(image_data) {
+    $.each(image_data, function (index, value) { 
+      var li = document.createElement('li');
+      list_items.push(li);
+      li.classList.add('other-photo-item');
+      $(li).html(`<img src=${value.url}>`);
+      $('.photos').append(li);
+    });
   }
 
   displayCatBreed();
@@ -113,6 +123,6 @@ $(document).ready(function () {
       localStorage.removeItem('image_response');
     }
   }
+  
   deleteLocalStorageValues();
-
 });
