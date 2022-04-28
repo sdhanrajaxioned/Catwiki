@@ -430,11 +430,13 @@ footer .wrapper {
 
 /* styling for cat_article page starts here */
 .cat-breed-details .wrapper,
-.breed-ratings li {
+.breed-ratings-item {
   display: flex;
 }
 
-.breed-ratings li { align-items: center; }
+.breed-ratings-item { align-items: center; }
+.breed-ratings-item:nth-child(-n+2) { padding-bottom: 38px; }
+/* .breed-ratings-item:nth-child(3n) { padding-bottom: 15px; } */
 
 .other-photos-heading,
 .breed-name-heading {
