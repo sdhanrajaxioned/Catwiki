@@ -113,11 +113,13 @@ li {
 .wrapper {
   max-width: 1350px;
   width: 92%; 
+  padding: 0 5%;
   margin: 0 auto;
 }
 /*=================================
   Header styling starts here
 =================================*/
+header .wrapper { padding: 0;}
 .header-logo {
   padding: 25px 0;
   font-family: 'Mystery Quest', cursive;
@@ -427,6 +429,76 @@ footer .wrapper {
 }
 
 /* styling for cat_article page starts here */
+.cat-breed-details .wrapper,
+.breed-ratings li {
+  display: flex;
+}
+
+.breed-ratings li { align-items: center; }
+
+.other-photos-heading,
+.breed-name-heading {
+  padding-bottom: 10px;
+  color: #291507;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.breed-description-heading { flex-basis: 150px;}
+
+.breed-description {
+  padding-bottom: 19px;
+  color: #291507;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.photos { 
+  margin: 21px 0 126px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.searched-cat-img { margin-right: 11%; }
+
+.other-photo-item {
+  width: 280px;
+  height: 280px;
+  margin: 0 4.2% 53px 0;
+  flex-basis: 21.8%;
+  overflow: hidden;
+}
+
+.other-photo-item img {
+  height: 100%;
+  border-radius: 24px;
+}
+
+.other-photo-item:nth-child(4n) { margin-right: 0;}
+
+.rating-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.rating-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.rating-outer::before {
+  content: "\f108 \f108 \f108 \f108 \f108";
+  font-family: 'Material Icons';
+  font-size: 50px;
+  color: #ccc;
+  float: right;
+  text-indent: 0;
+}
+/* styling for cat_article page ends here */
 
 /*media query starts*/
 /*media query for 1198px starts here*/
@@ -457,6 +529,8 @@ footer .wrapper {
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
   .most-searched-flex .heading-txt { width: 45% }
+  .other-photo-item{ flex-basis: 47.9%; }
+  .other-photo-item:nth-child(even) {margin-right: 0;}
 }  
 
 /*media query for 898px starts here*/
@@ -566,6 +640,10 @@ footer .wrapper {
   .subtxt { font-size: 16px;  }
   /*styling cat article page ends*/
 
+  /*styling cat breed details page start*/
+  .other-photo-item{ flex-basis: 100%; }
+  .other-photo-item { margin-right: 0;}
+  .other-photo-item:last-of-type {margin-bottom: 0;}
 }  
 
 
