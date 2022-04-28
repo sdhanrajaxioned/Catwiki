@@ -49,10 +49,10 @@ $(document).ready(function () {
   //function to display cat breed details and other cat photos once the page is redirected to cat breed details.
   function displayCatBreed() {
     if($('section').hasClass('cat-breed-details')) {
-      console.log(localStorage);
+      $('.photos').html('');
       var image_data = JSON.parse(localStorage.getItem('image_response'));
       var breed_info_data = JSON.parse(localStorage.getItem('breed_details'));
-      console.log(image_data);
+      console.log(breed_info_data)
       var cat_breed_name = breed_info_data[0]['name'];
       var cat_temperament = breed_info_data[0]['temperament'];
       var cat_origin = breed_info_data[0]['origin'];
@@ -65,6 +65,20 @@ $(document).ready(function () {
       var cat_health_issues = breed_info_data[0]['health_issues'];
       var cat_social_needs = breed_info_data[0]['social_needs'];
       var cat_stranger_friendly = breed_info_data[0]['stranger_friendly'];
+
+      var ratings = {
+        adaptability: cat_adaptability,
+        affection: cat_affection_level,
+        child_friendly: cat_child_friendly,
+        grooming: cat_grooming,
+        intelligence: cat_intelligence,
+        health_issues: cat_health_issues,
+        social_needs: cat_social_needs,
+        stranger_friendly: cat_stranger_friendly
+      }
+
+      setRatings(ratings);
+
       $('.breed-name-heading').html(cat_breed_name);
       $('.temperament').html(cat_temperament);
       $.each(image_data, function (index, value) { 
@@ -77,10 +91,21 @@ $(document).ready(function () {
     }
   }
 
+  function setRatings(ratings) {
+    var ratingsTotal = 5;
+    for (var rating in ratings) {
+      //get percentage
+      var rating_percentage = ((ratings[rating] / ratingsTotal) * 100);
+      //round to nearest 10
+      var rating_percentage_rounded = `${Math.round(rating_percentage / 10) * 10}%`
+      $(`.${rating} .rating-inner`).css('width', rating_percentage_rounded);
+    }
+  }
+
   displayCatBreed();
 
+  //function to empty local storage 
   function deleteLocalStorageValues() {
-    // console.log(image_response);
     if (localStorage.getItem('breed_details') !== null) {
       localStorage.removeItem('breed_details');
     } 
