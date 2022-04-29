@@ -245,7 +245,6 @@ header .wrapper { padding: 0;}
   pointer-events: auto;
 } 
 .cat-search-form.active .autocomplete-box-item { display: block; } 
-
 /*banner styling ends here*/
 
 /* most searched section styling starts here */
@@ -398,13 +397,13 @@ header .wrapper { padding: 0;}
   content: '';
   display: none;
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: #000;
   opacity: .7;
-  z-index: 10;
   text-indent: -9999px;
 }
 
@@ -417,7 +416,6 @@ header .wrapper { padding: 0;}
   width: 80%;
   min-height: 20%;
   height: auto;
-  box-sizing: border-box;
   padding: 10px 15px;
   margin: auto;
   border-radius: 15px;
@@ -426,19 +424,18 @@ header .wrapper { padding: 0;}
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 20;
   top: 15%;
   right: 0;
   left: 0;
   background: #fff;
-  z-index: 20;
+  box-sizing: border-box;
 }
 
-.modal-container.respo #search-breed {
-  border: 1px solid #000;
-}
+.modal-container.respo #search-breed { border: 1px solid #000; }
 
 .autocomplete-box.active {
-  max-width: 320px;
+  min-width: fit-content;
   max-height: 219px;
   border: 1px solid #000;
   position: absolute;
@@ -447,7 +444,6 @@ header .wrapper { padding: 0;}
   right: 50%;
   transform: translate(-50%,-50%);
 }
-
 /*=================================
   main styling ends here
 =================================*/
@@ -568,7 +564,6 @@ footer .wrapper {
 }
 
 .searched-cat-img { margin-right: 11%; }
-
 .searched-cat-img img { border-radius: 24px; }
 
 .other-photo-item {
@@ -592,12 +587,12 @@ footer .wrapper {
 }
 
 .rating-inner {
+  width: 0;
   position: absolute;
   top: 0;
   left: 0;
   white-space: nowrap;
   overflow: hidden;
-  width: 0;
 }
 
 .rating-outer::before {
@@ -616,23 +611,10 @@ footer .wrapper {
   font-weight: 900;
 }
 
-
 .loading-txt { 
   font-size: 24px;
   font-weight: 600;
 }
-
-/* body {
-  min-height: 100vh;
-  position: relative;
-}
-
-.fixed-footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-} */
-
 /* styling for cat_breed_details page ends here */
 
 /* styling for most_searched_breed page starts here */
@@ -747,6 +729,10 @@ footer .wrapper {
   top: 9px;
   right: 11px;
   bottom: 9px;
+  }
+
+  .cat-breed-details .wrapper{
+    flex-direction: column;  
   }
 
   ::placeholder { font-size: 12px; }
