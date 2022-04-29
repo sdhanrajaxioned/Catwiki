@@ -8,6 +8,7 @@ $(document).ready(function () {
   //on search button click first clears local storage thne page is redirected to cat breed details page and cat breed info is displayed.
   search_btn.click(function (e) { 
     e.preventDefault();
+    validateCatField();
     getCatInfo();
   });
 
@@ -43,7 +44,6 @@ $(document).ready(function () {
     }
   });
 
-  //displays
   function showSuggestions(list) {
     var listData;
     if(!list.length) {
@@ -99,6 +99,7 @@ $(document).ready(function () {
       $('.photos').html('');
       var image_data = JSON.parse(localStorage.getItem('image_response'));
       var breed_info_data = JSON.parse(localStorage.getItem('breed_details'));
+      console.log(breed_info_data)
       var cat_breed_name = breed_info_data[0]['name'];
       var cat_breed_description = breed_info_data[0]['description'];
       var cat_temperament = breed_info_data[0]['temperament'];
@@ -214,4 +215,24 @@ $(document).ready(function () {
   }
   
   deleteLocalStorageValues();
+
+
+  //form validation
+  function emptyField(input) {
+    input.removeClass('invalid');
+    if(input.val() == ''){
+      input.addClass('invalid');
+      input.next().html('**This field cant be empty!**');
+      input.next().slideDown();
+      e.preventDefault();
+    }
+  }
+
+  function validateCatField(xhr) {
+    search_input.removeClass('invalid');
+    if(search_input.val() == ''){
+      emptyField(search_input);
+    }
+  }
+
 });
