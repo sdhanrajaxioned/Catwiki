@@ -217,29 +217,37 @@ $(document).ready(function () {
   deleteLocalStorageValues();
 
   // window resize functioanality
-  $(window).resize(() => {
+  $(window).resize(function() {
     modal_toggle();
   })
-  $(window).on('load', function () {
+  $(window).on('load', function() {
     modal_toggle();
   })
   
-
   // modal for mobile devices
   function modal_toggle() {
     if(window.matchMedia('(max-width: 768px').matches){
       $('#search-breed').on('click', function() {
         var input_container = $('.input-container');
-        $('.modal-container').addClass('active');
+        $('.modal-container').addClass('respo');
         $('html, body').css('overflow', 'hidden');
-        $('.modal-contanier').append(input_container);
       })
-    } else {
-
+      $('.error-msg').hide();
+    } else if (window.matchMedia('(min-width: 768px)').matches) {
+      $('.modal').removeClass('respo');
+      $('.layer').hide();
+      $('html, body').css("overflow", "visible")
+      $('.error').hide()
     }
   }
-
-  
+  // close responsive modal
+  $('.close').click(function() {
+    $('.layer').hide();
+    $('.modal').removeClass('respo')
+    $('#breed').val('');
+    $('.modal-list').hide();
+    $('html, body').css("overflow", "visible")
+  })
 
   //form validation
   function emptyField(input) {
