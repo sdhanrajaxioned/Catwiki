@@ -216,12 +216,30 @@ $(document).ready(function () {
   
   deleteLocalStorageValues();
 
+  // window resize functioanality
+  $(window).resize(() => {
+    modal_toggle();
+  })
+  $(window).on('load', function () {
+    modal_toggle();
+  })
+  
+
   // modal for mobile devices
-  if($(window).width() < 768) {
-    $('.search_input').click(function() {
-      $('.modal-container').addClass('active')
-    })
+  function modal_toggle() {
+    if(window.matchMedia('(max-width: 768px').matches){
+      $('#search-breed').on('click', function() {
+        var input_container = $('.input-container');
+        $('.modal-container').addClass('active');
+        $('html, body').css('overflow', 'hidden');
+        $('.modal-contanier').append(input_container);
+      })
+    } else {
+
+    }
   }
+
+  
 
   //form validation
   function emptyField(input) {
