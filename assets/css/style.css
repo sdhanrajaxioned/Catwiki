@@ -417,23 +417,13 @@ header .wrapper { padding: 0;}
   width: 80%;
   min-height: 20%;
   height: auto;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px 15px;
   margin: auto;
   border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   position: fixed;
   top: 15%;
@@ -442,6 +432,22 @@ header .wrapper { padding: 0;}
   background: #fff;
   z-index: 20;
 }
+
+.modal-container.respo #search-breed {
+  border: 1px solid #000;
+}
+
+.autocomplete-box.active {
+  max-width: 320px;
+  max-height: 219px;
+  border: 1px solid #000;
+  position: absolute;
+  top: 163px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+}
+
 /*=================================
   main styling ends here
 =================================*/
