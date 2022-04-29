@@ -230,11 +230,13 @@ $(document).ready(function () {
       $('#search-breed').on('click', function() {
         var input_container = $('.input-container');
         $('.modal-container').addClass('respo');
+        $('.autocomplete-box').addClass('active');
         $('html, body').css('overflow', 'hidden');
       })
       $('.error-msg').hide();
     } else if (window.matchMedia('(min-width: 768px)').matches) {
       $('.modal').removeClass('respo');
+      $('.autocomplete-box').remove('active');
       $('.layer').hide();
       $('html, body').css("overflow", "visible")
       $('.error').hide()
