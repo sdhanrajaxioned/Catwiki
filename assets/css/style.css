@@ -232,6 +232,7 @@ header .wrapper { padding: 0;}
 
 .cat-search-form.active .autocomplete-box {
   padding: 20px;
+  z-index: 1;
   opacity: 1;
   pointer-events: auto;
 } 
