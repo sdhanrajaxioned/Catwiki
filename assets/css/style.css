@@ -381,6 +381,9 @@ footer .wrapper {
   font-weight: 700;
   text-decoration: underline;
 }
+
+
+
  /*=================================
   footer styling ends here
 =================================*/ 
@@ -508,16 +511,44 @@ footer .wrapper {
   font-size: 50px;
   font-weight: 900;
 }
+
+
+.loading-txt { 
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.fixed-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+} */
+
 /* styling for cat_breed_details page ends here */
 
 /* styling for most_searched_breed page starts here */
 .top-10-searched-breeds { color: #291507;}
-.top-breed-figure-img { border-radius: 24px; }
-.most-searched--content-heading { font-size: 36px;}
+
+.top-10-breeds {padding-bottom: 96px;}
+.top-breed-figure-img { 
+  height: 100%;
+  border-radius: 24px; 
+}
+
+.most-searched--content-heading { 
+  font-size: 36px;
+  font-weight: 600;
+}
 
 .most-searched-heading {
   padding-bottom: 43px;
   font-size: 36px;
+  font-weight: 700;
 }
 
 .top-breed-item {
@@ -526,13 +557,14 @@ footer .wrapper {
 }
 
 .top-breed-figure {
-  min-width: 170px;
+  max-width: 170px;
   min-height: 170px;
   margin-right: 4%;
   overflow: hidden;
+  border-radius: 24px;
 }
 
-.most-searched--content-subtext {
+.most-searched-content-text {
   padding-top: 8px;
   font-size: 18px;
 }
@@ -720,6 +752,11 @@ footer .wrapper {
 @media only screen and (max-width: 480px) {
   .most-searched-flex .heading-txt { width: 51%; }
   .cat-info { margin-right: 50%; }
+
+  /*styling most searched breed*/
+  .most-searched-heading { font-size: 20px;}
+  .most-searched-content-text { font-size: 16px; }
+  .most-searched--content-heading { font-size: 20px; }
 }
 
 
