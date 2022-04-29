@@ -202,9 +202,41 @@ header .wrapper { padding: 0;}
 }
 
 .cat-search-form{
-  max-width: 400px;
   position: relative;
+  max-width: 400px;
 }
+.autocomplete-box {
+  min-width: 398px;
+  max-height: 219px;
+  padding: 0;
+  border-radius: 24px;
+  position: absolute;
+  top: 80px;
+  background-color: #FFF;
+  opacity: 0;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.autocomplete-box-item {
+  padding: 18px 8px;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  display: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.autocomplete-box-item:hover { background-color: rgba(151, 151, 151, 0.1) }
+
+#search-breed.active .autocomplete-box {
+  padding: 20px;
+  opacity: 1;
+  pointer-events: auto;
+} 
+#search-breed.active .autocomplete-box-item { display: block; } 
+
 /*banner styling ends here*/
 
 /* most searched section styling starts here */
@@ -533,8 +565,8 @@ footer .wrapper {
 
 /* styling for most_searched_breed page starts here */
 .top-10-searched-breeds { color: #291507;}
-
 .top-10-breeds {padding-bottom: 96px;}
+
 .top-breed-figure-img { 
   height: 100%;
   border-radius: 24px; 
@@ -632,7 +664,7 @@ footer .wrapper {
   }
 
   .cat-search-form { max-width: 160px; }
-
+  
   #search-breed {
     height: 30px;
     padding: 20px 35px 20px 11px;
