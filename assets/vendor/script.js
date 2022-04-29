@@ -114,6 +114,41 @@ $(document).ready(function () {
 
   displayCatBreed();
 
+  //function to get all breed data
+  function getBreeds() {
+    $.ajax({  
+      type: 'GET',
+      url: `https://api.thecatapi.com/v1/breeds`,
+      headers: {'x-api-key' : 'c01bb41e-223c-4c42-8d3f-32776d4d64a9'},
+      data: 'JSON',
+      success: function(response) {
+        displayTopBreeds(response)
+      }
+    });
+  }
+
+  //function to display top 10 searched breeds
+  function displayTopBreeds(response) {
+    $('.top-10-breeds').html('');
+    var top_10_breed_array = response.slice(0,10);  
+    $.each(top_10_breed_array, function (index, cat_breed) { 
+      var top_breed_listItem = document.createElement('li');
+      top_breed_listItem.classList.add('top-breed-item');
+      top_breed_listItem.innerHTML = `
+        <figure class="top-breed-figure">
+          <img class="top-breed-figure-img" src=${cat_breed.image.url} alt='${cat_breed.name} cat photo'>
+        </figure>
+        <div class="most-searched-content">
+          <h3 class="most-searched--content-heading">${index + 1}. ${cat_breed.name}</h3>
+          <p class="most-searched-content-text">${cat_breed.description}</p>
+        </div>
+      `;
+      $('.top-10-breeds').append(top_breed_listItem);
+    });
+  }
+
+  getBreeds();
+
   //function to empty local storage 
   function deleteLocalStorageValues() {
     if (localStorage.getItem('breed_details') !== null) {
