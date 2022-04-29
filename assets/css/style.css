@@ -408,12 +408,12 @@ header .wrapper { padding: 0;}
   text-indent: -9999px;
 }
 
-.modal {
+.modal-container {
   width: 52%;
   position: relative;
 }
 
-.modal.respo {
+.modal-container.respo {
   width: 80%;
   min-height: 20%;
   height: auto;
