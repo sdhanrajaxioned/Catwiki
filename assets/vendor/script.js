@@ -1,13 +1,60 @@
 $(document).ready(function () {
   var search_input = $('#search-breed');
   var search_btn = $('#search-btn');
+  var suggestion_box = $('.autocomplete-box');
   var list_items = [];
+  var breed_names = [];
 
   //on search button click first clears local storage thne page is redirected to cat breed details page and cat breed info is displayed.
   search_btn.click(function (e) { 
     e.preventDefault();
     getCatInfo();
   });
+
+  //getBreedNames for autocomplete suggestion box
+  function getBreedNames(response) {
+    $.each(response, function (index, breed) { 
+      breed_names.push(breed.name)
+    });
+  }
+  getBreedNames();
+
+  //display suggestion box on keyup 
+  search_input.keyup(function (e) { 
+    var input_data = e.target.value;
+    var empty_array = [];
+    if(input_data) {
+      empty_array = breed_names.filter(function (data) {
+        return data.toLocaleLowerCase().startsWith(input_data.toLocaleLowerCase());
+      });
+      empty_array = empty_array.map(function (data) {
+        return data = '<li class="autocomplete-box-item">'+ data + '</li>'
+      })
+      $('.cat-search-form').addClass('active');
+      showSuggestions(empty_array);
+      $('.autocomplete-box li').each(function() {
+        $(this).click(function() {
+          search_input.val($(this).text());
+          $('.cat-search-form').removeClass('active');
+        })
+      })
+    } else {
+      $('.cat-search-form').removeClass('active');
+    }
+  });
+
+  //displays
+  function showSuggestions(list) {
+    var listData;
+    if(!list.length) {
+     var user_input = search_input.val();
+     listData = '<li class="autocomplete-box-item">' + user_input + '</li>';
+    } else {
+      listData = list.join('')
+    }
+    suggestion_box.html('');
+    suggestion_box.append(listData)
+  }
 
   //function to get cat breed details data from cat api and stores it in local storage and then calls getImages 
   function getCatInfo() {
@@ -28,7 +75,7 @@ $(document).ready(function () {
   function getImages(search_input_value) {
     $.ajax({  
       type: 'GET',
-      url: `https://api.thecatapi.com/v1/images/search?breed_id=${search_input_value}&limit=8`,
+      url: `https://api.thecatapi.com/v1/images/search?breed_id=${search_input_value}&limit=9`,
       headers: {'x-api-key' : 'c01bb41e-223c-4c42-8d3f-32776d4d64a9'},
       data: 'JSON',
       success: function(response) {
@@ -103,6 +150,12 @@ $(document).ready(function () {
 
   //displays other photos of the breed
   function displayOtherPhotos(image_data) {
+    var image = image_data.splice(0,1);
+    console.log(image);
+    var image_url = image[0]['url'];
+    var image_alt = image[0]['breeds'][0]['name'];
+    console.log(image_alt)
+    $('.searched-cat-img').append(`<img src=${image_url} alt='${image_alt} photo'>`)
     $.each(image_data, function (index, value) { 
       var li = document.createElement('li');
       list_items.push(li);
@@ -122,7 +175,8 @@ $(document).ready(function () {
       headers: {'x-api-key' : 'c01bb41e-223c-4c42-8d3f-32776d4d64a9'},
       data: 'JSON',
       success: function(response) {
-        displayTopBreeds(response)
+        displayTopBreeds(response);
+        getBreedNames(response);
       }
     });
   }
