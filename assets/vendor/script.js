@@ -216,6 +216,12 @@ $(document).ready(function () {
   
   deleteLocalStorageValues();
 
+  // modal for mobile devices
+  if($(window).width() < 768) {
+    $('.search_input').click(function() {
+      $('.modal-container').addClass('active')
+    })
+  }
 
   //form validation
   function emptyField(input) {
