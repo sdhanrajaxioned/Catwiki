@@ -230,12 +230,12 @@ header .wrapper { padding: 0;}
 
 .autocomplete-box-item:hover { background-color: rgba(151, 151, 151, 0.1) }
 
-#search-breed.active .autocomplete-box {
+.cat-search-form.active .autocomplete-box {
   padding: 20px;
   opacity: 1;
   pointer-events: auto;
 } 
-#search-breed.active .autocomplete-box-item { display: block; } 
+.cat-search-form.active .autocomplete-box-item { display: block; } 
 
 /*banner styling ends here*/
 
@@ -482,7 +482,13 @@ footer .wrapper {
   font-weight: 600;
 }
 
-.breed-description-heading { flex-basis: 150px;}
+.breed-description-heading { 
+  flex-basis: 150px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.breed-ratings-item span { font-size: 16px; }
 
 .breed-description {
   padding-bottom: 19px;
@@ -498,6 +504,8 @@ footer .wrapper {
 }
 
 .searched-cat-img { margin-right: 11%; }
+
+.searched-cat-img img { border-radius: 24px; }
 
 .other-photo-item {
   width: 280px;
